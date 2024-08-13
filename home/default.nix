@@ -1,7 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   imports = [
+    ../options.nix
     ./programs/git.nix
     ./programs/fish.nix
     ./programs/alacritty.nix

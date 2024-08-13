@@ -26,7 +26,7 @@ in
   nixpkgs.config.allowUnfree = true;
 
   environment.variables = {
-    FLAKE = "/Users/${user.username}/nix";
+    FLAKE = "/Users/${user.username}/.dotfiles";
   };
 
   nix = {
