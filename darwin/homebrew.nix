@@ -16,6 +16,7 @@
       "whatsapp"
       "alfred"
       "alacritty"
+      "macfuse"
     ];
 
     masApps = {

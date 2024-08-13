@@ -3,15 +3,16 @@
 {
   imports = [
     ../options.nix
+    ../shared/packages.nix
     ./programs/git.nix
     ./programs/fish.nix
     ./programs/alacritty.nix
     ./programs/starship.nix
-    ../shared/packages.nix
   ];
 
   home.stateVersion = "24.05";
 
+  # TODO: Don't think this is necessary
   nixpkgs.config.allowUnfree = true;
   fonts.fontconfig.enable = true;
 
@@ -21,6 +22,15 @@
       nix-direnv.enable = true;
     };
 
+    # TODO: See if we can use SOPS to capture the encryption key to improve bootstrap QoL
+    atuin.enable = true;
+    atuin.flags = [
+      "--disable-up-arrow"
+    ];
     bat.enable = true;
+    eza.enable = true;
+    fzf.enable = true;
+    kitty.enable = true;
+    zoxide.enable = true;
   };
 }
