@@ -3,24 +3,21 @@
     enable = true;
 
     brews = [
-      "gh"
+      # "gh"
       "docker"
-      "lazygit"
+      # "lazygit"
     ];
 
     casks = [
       "bartender"
-      "iterm2"
-      "goland"
-      "google-cloud-sdk"
+      # "iterm2"
+      # "goland"
+      # "google-cloud-sdk"
       "whatsapp"
       "alfred"
-      "alacritty"
       "macfuse"
     ];
 
-    masApps = {
-      "Things" = 904280696;
-    };
+    masApps = { "Things" = 904280696; };
   };
 }

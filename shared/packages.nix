@@ -2,6 +2,9 @@
 
 {
   home.packages = with pkgs; [
+    niv
+    nixfmt
+    nil
     ripgrep
     fira-code
     fira-code-symbols
@@ -12,5 +15,9 @@
     rclone
     macfuse-stubs
     fuse
+    jetbrains.goland
+    google-cloud-sdk
+    lazygit
+    gh
   ];
 }
