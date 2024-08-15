@@ -4,6 +4,7 @@
   imports = [
     ../options.nix
     ../shared/packages.nix
+    ./xdg.config.nix
     ./programs/git.nix
     ./programs/fish.nix
     ./programs/alacritty.nix
@@ -34,8 +35,4 @@
     wezterm.enable = true;
     zoxide.enable = true;
   };
-
-  xdg.configFile."wezterm".source = config.lib.file.mkOutOfStoreSymlink "${config.dotfiles}/home/config/wezterm";
-  xdg.configFile."wezterm".recursive = true;
-  xdg.configFile."wezterm/wezterm.lua".enable = false;
 }
