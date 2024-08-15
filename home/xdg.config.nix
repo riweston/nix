@@ -6,4 +6,6 @@
   xdg.configFile."wezterm".recursive = true;
   xdg.configFile."wezterm/wezterm.lua".enable = false;
 
+  xdg.configFile."fish/functions".source = config.lib.file.mkOutOfStoreSymlink
+    "${config.dotfiles}/home/config/fish/functions";
 }
