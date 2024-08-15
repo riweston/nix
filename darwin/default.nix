@@ -7,11 +7,8 @@ let
     shell = pkgs.fish;
     uid = 501;
   };
-in
-{
-  imports = [
-    ./homebrew.nix
-  ];
+in {
+  imports = [ ./homebrew.nix ];
 
   environment.systemPackages = [
     pkgs.home-manager
@@ -25,9 +22,7 @@ in
   services.nix-daemon.enable = true;
   nixpkgs.config.allowUnfree = true;
 
-  environment.variables = {
-    FLAKE = "/Users/${user.username}/.dotfiles";
-  };
+  environment.variables = { FLAKE = "/Users/${user.username}/.dotfiles"; };
 
   nix = {
     package = pkgs.nix;
@@ -63,8 +58,5 @@ in
 
   system.stateVersion = 4;
 
-  fonts.packages = [
-    pkgs.atkinson-hyperlegible
-    pkgs.jetbrains-mono
-  ];
+  fonts.packages = [ pkgs.atkinson-hyperlegible pkgs.jetbrains-mono ];
 }

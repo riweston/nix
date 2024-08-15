@@ -16,22 +16,17 @@
     mac-app-util.url = "github:hraban/mac-app-util";
   };
 
-  outputs = inputs @ {
-    self,
-    nixpkgs,
-    home-manager,
-    darwin,
-    nh_darwin,
-    mac-app-util,
-    ...
-  }: let
+  outputs = inputs@{ self, nixpkgs, home-manager, darwin, nh_darwin
+    , mac-app-util, ... }:
+    let
       hostname = "MAC-EVIDEN-NQK9H7JC54";
       system = "aarch64-darwin";
 
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
-      }; in {
+      };
+    in {
       darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {
         inherit system;
         specialArgs = inputs;

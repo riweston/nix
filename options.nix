@@ -1,10 +1,6 @@
 { config, lib, ... }:
 
 {
-  # meta = with lib; {
-  #   description = "Nix configuration options";
-  # };
-
   options = {
     dotfiles = lib.mkOption {
       type = lib.types.path;
