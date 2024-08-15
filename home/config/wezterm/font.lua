@@ -6,11 +6,11 @@ M.main_font = wezterm.font_with_fallback({{
     family = "Fira Code",
     weight = "DemiBold"
 }, {
-    family = "Noto Color Emoji",
-    scale = 0.75 -- Optionally scale the emoji font
+    family = "Noto Color Emoji"
+    -- scale = 0.75 -- Optionally scale the emoji font
 }})
 
-M.size = 14.0
+M.size = 11.0
 
 -- Additional font-related settings
 M.font_rules = {{

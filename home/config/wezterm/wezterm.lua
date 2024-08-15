@@ -13,7 +13,7 @@ return {
     font = font.main_font,
     font_size = font.size,
 
-    window_background_opacity = 0.85,
+    window_background_opacity = 0.9,
     window_padding = {
         left = 5,
         right = 5,
