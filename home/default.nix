@@ -7,7 +7,6 @@
     ./xdg.config.nix
     ./programs/git.nix
     ./programs/fish.nix
-    ./programs/alacritty.nix
     ./programs/starship.nix
   ];
 
@@ -25,9 +24,7 @@
 
     # TODO: See if we can use SOPS to capture the encryption key to improve bootstrap QoL
     atuin.enable = true;
-    atuin.flags = [
-      "--disable-up-arrow"
-    ];
+    atuin.flags = [ "--disable-up-arrow" ];
     bat.enable = true;
     eza.enable = true;
     fzf.enable = true;
