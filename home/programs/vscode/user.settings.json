@@ -1,0 +1,142 @@
+{
+  "[terraform]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSaveMode": "file",
+    "editor.formatOnSave": true
+  },
+  "[templ]": {
+    "editor.defaultFormatter": "a-h.templ"
+  },
+  "tailwindCSS.includeLanguages": {
+    "templ": "html"
+  },
+  "emmet.includeLanguages": {
+    "templ": "html"
+  },
+  "[yaml]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.formatOnSaveMode": "file",
+    "editor.formatOnSave": true
+  },
+  "workbench.colorTheme": "Dark Lemon Material",
+  "editor.inlineSuggest.enabled": true,
+  "editor.trimAutoWhitespace": true,
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "files.insertFinalNewline": true,
+  "files.autoSave": "onFocusChange",
+  "editor.fontFamily": "fira code Retina",
+  "explorer.compactFolders": false,
+  "editor.rulers": [80, 90, 120],
+  "nix.formatterPath": "nixfmt",
+  "nix.enableLanguageServer": true,
+  "nix.serverPath": "nil",
+  "nix.serverSettings": {
+    "nil": {
+      "diagnostics": {
+        "ignored": ["unused_binding", "unused_with"]
+      },
+      "formatting": {
+        "command": ["nixfmt"]
+      }
+    }
+  },
+  "indentRainbow.indicatorStyle": "light",
+  "settingsSync.ignoredSettings": [
+    "vscode-home-assistant.hostUrl",
+    "vscode-home-assistant.longLivedAccessToken"
+  ],
+  "editor.formatOnSave": true,
+  "vscode-home-assistant.ignoreCertificates": true,
+  "redhat.telemetry.enabled": false,
+  "[github-actions-workflow]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "editor.inlineSuggest.showToolbar": "always",
+  "picowgo.pythonPath": "python3",
+  "ansible.executionEnvironment.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false
+  },
+  "git.autofetch": true,
+  "go.toolsManagement.autoUpdate": true,
+  "terminal.integrated.shellIntegration.enabled": true,
+  "terminal.integrated.defaultProfile.osx": "fish",
+  "terminal.integrated.profiles.osx": {
+    "bash": {
+      "path": "bash",
+      "args": ["-l"],
+      "icon": "terminal-bash"
+    },
+    "zsh": {
+      "path": "zsh",
+      "args": ["-l"]
+    },
+    "fish": {
+      "path": "/opt/homebrew/bin/fish",
+      "args": ["-l"]
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
+    },
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    }
+  },
+  "githubPullRequests.pullBranch": "never",
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "cSpell.language": "en,en-GB",
+  "cSpell.enabled": true,
+  "cSpell.userWords": ["cloudfunction", "firestore", "Iconify", "terragrunt"],
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "diffEditor.ignoreTrimWhitespace": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "github.copilot.editor.enableAutoCompletions": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[nix]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.defaultFormatter": "jnoortheen.nix-ide"
+  },
+  "go.alternateTools": {
+    "go": "${workspaceRoot}/.devenv/profile/bin/go",
+    "gomodifytags": "${workspaceRoot}/.devenv/profile/bin/gomodifytags",
+    "godef": "${workspaceRoot}/.devenv/profile/bin/godef",
+    "gofmt": "${workspaceRoot}/.devenv/profile/bin/gofmt",
+    "goimports": "${workspaceRoot}/.devenv/profile/bin/goimports",
+    "gopls": "${workspaceRoot}/.devenv/profile/bin/gopls",
+    "godoc": "${workspaceRoot}/.devenv/profile/bin/godoc",
+    "gotests": "${workspaceRoot}/.devenv/profile/bin/gotests",
+    "godex": "${workspaceRoot}/.devenv/profile/bin/godex",
+    "dlv": "${workspaceRoot}/.devenv/profile/bin/dlv"
+  },
+  "go.formatTool": "gofmt"
+}

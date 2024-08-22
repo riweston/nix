@@ -8,6 +8,7 @@
     ./programs/git.nix
     ./programs/fish.nix
     ./programs/starship.nix
+    ./programs/vscode
   ];
 
   home.stateVersion = "24.05";
