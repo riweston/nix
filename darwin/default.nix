@@ -1,20 +1,11 @@
-{ config, pkgs, nh_darwin, ... }:
+{ config, pkgs, nh_darwin, userSettings, ... }:
 
-let
-  user = rec {
-    username = "riweston";
-    home = "/Users/${user.username}";
-    shell = pkgs.fish;
-    uid = 501;
-  };
-in {
+{
   imports = [ ./homebrew.nix ];
 
   environment.systemPackages = [
     pkgs.home-manager
     nh_darwin.packages.${pkgs.stdenv.hostPlatform.system}.default
-    pkgs.nix-output-monitor
-    pkgs.nvd
   ];
 
   environment.shellAliases.nh = "nh_darwin";
@@ -22,13 +13,11 @@ in {
   services.nix-daemon.enable = true;
   nixpkgs.config.allowUnfree = true;
 
-  environment.variables = { FLAKE = "/Users/${user.username}/.dotfiles"; };
-
   nix = {
     package = pkgs.nix;
     settings = {
       "extra-experimental-features" = [ "nix-command" "flakes" ];
-      trusted-users = [ "root" user.username ];
+      trusted-users = [ "root" userSettings.username ];
     };
   };
 
@@ -44,17 +33,18 @@ in {
     # };
   };
 
-  environment.variables.SHELL = "${pkgs.fish}/bin/fish";
-  environment.shells = [ pkgs.fish ];
-
   users = {
-    knownUsers = [ user.username ];
+    knownUsers = [ userSettings.username ];
     users.riweston = {
-      home = user.home;
-      shell = user.shell;
-      uid = user.uid;
+      home = userSettings.homeDirectory;
+      shell = userSettings.shell;
+      uid = userSettings.uid;
     };
   };
+
+  security.sudo.extraConfig = ''
+    ${userSettings.username} ALL=(ALL) ALL
+  '';
 
   system.stateVersion = 4;
 
