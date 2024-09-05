@@ -8,4 +8,8 @@
 
   xdg.configFile."fish/functions".source = config.lib.file.mkOutOfStoreSymlink
     "${config.dotfiles}/home/config/fish/functions";
+
+  xdg.configFile."lazygit/config.yml".source =
+    config.lib.file.mkOutOfStoreSymlink
+    "${config.dotfiles}/home/config/lazygit/config.yml";
 }

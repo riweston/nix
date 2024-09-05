@@ -19,6 +19,7 @@
 
   home.sessionVariables = {
     FLAKE = "${userSettings.homeDirectory}/.dotfiles";
+    LG_CONFIG_FILE = "${userSettings.homeDirectory}/.config/lazygit/config.yml";
   };
 
   programs = {
