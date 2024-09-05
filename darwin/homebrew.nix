@@ -2,21 +2,9 @@
   homebrew = {
     enable = true;
 
-    brews = [
-      # "gh"
-      "docker"
-      # "lazygit"
-    ];
+    brews = [ "docker" ];
 
-    casks = [
-      "bartender"
-      # "iterm2"
-      # "goland"
-      # "google-cloud-sdk"
-      "whatsapp"
-      "alfred"
-      "macfuse"
-    ];
+    casks = [ "bartender" "whatsapp" "macfuse" ];
 
     masApps = { "Things" = 904280696; };
   };

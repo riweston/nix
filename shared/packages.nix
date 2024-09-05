@@ -27,5 +27,8 @@
     azure-cli
     prusa-slicer
     go
+    raycast
+    act
+    colima
   ];
 }
