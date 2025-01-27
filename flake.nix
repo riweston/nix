@@ -20,7 +20,7 @@
     , mac-app-util, ... }:
     let
       systemSettings = rec {
-        hostname = "MAC-EVIDEN-NQK9H7JC54";
+        hostname = "MacBookPro";
         system = "aarch64-darwin";
       };
 
