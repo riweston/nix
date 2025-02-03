@@ -32,8 +32,6 @@
     # };
   };
 
-  services.dnsmasq.enable = true;
-  services.dnsmasq.addresses = import ./config/dnsmasq.nix;
 
   environment.variables.SHELL = "${pkgs.fish}/bin/fish";
   environment.shells = [ pkgs.fish ];
