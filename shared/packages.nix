@@ -30,5 +30,6 @@
     raycast
     act
     colima
+    vscode
   ];
 }
