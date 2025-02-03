@@ -1,3 +1,3 @@
 function nob
-nh os build
+    nh darwin build
 end

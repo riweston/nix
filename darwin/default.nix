@@ -1,13 +1,9 @@
-{ config, pkgs, nh_darwin, userSettings, ... }:
+{ config, pkgs, userSettings, ... }:
 
 {
   imports = [ ./homebrew.nix ];
 
-  environment.systemPackages = [
-    pkgs.home-manager
-    nh_darwin.packages.${pkgs.stdenv.hostPlatform.system}.default
-  ];
-
+  environment.systemPackages = [ pkgs.home-manager ];
 
   services.nix-daemon.enable = true;
   nixpkgs.config.allowUnfree = true;
@@ -24,14 +20,7 @@
     gnupg.agent.enable = true;
     zsh.enable = true;
     fish.enable = true;
-
-    # TODO: Pending this PR https://github.com/LnL7/nix-darwin/pull/942
-    # nh = {
-    #   enable = true;
-    #   package = nh_darwin.packages.${pkgs.stdenv.hostPlatform.system}.default;
-    # };
   };
-
 
   environment.variables.SHELL = "${pkgs.fish}/bin/fish";
   environment.shells = [ pkgs.fish ];

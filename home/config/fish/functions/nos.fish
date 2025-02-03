@@ -1,3 +1,3 @@
 function nos
-nh os switch
+    nh darwin switch
 end

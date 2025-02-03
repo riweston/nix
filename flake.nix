@@ -11,13 +11,11 @@
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nh_darwin.url = "github:ToyVo/nh_darwin";
     # Temp fix until https://github.com/nix-community/home-manager/issues/1341 is resolved
     mac-app-util.url = "github:hraban/mac-app-util";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, darwin, nh_darwin
-    , mac-app-util, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, darwin, mac-app-util, ... }:
     let
       systemSettings = rec {
         hostname = "MacBookPro";
@@ -43,7 +41,6 @@
           specialArgs = {
             inherit inputs;
             inherit userSettings;
-            inherit nh_darwin;
           };
           modules = [
             ./darwin
@@ -61,7 +58,6 @@
               home-manager.extraSpecialArgs = {
                 system = systemSettings.system;
                 inherit userSettings;
-                inherit nh_darwin;
               };
             }
           ];
