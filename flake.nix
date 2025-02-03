@@ -32,7 +32,7 @@
       userSettings = rec {
         username = "riweston";
         shell = pkgs.fish;
-        uid = 501;
+        uid = 502;
         homeDirectory = "/Users/${username}";
       };
 
