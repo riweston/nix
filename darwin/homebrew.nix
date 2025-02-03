@@ -4,8 +4,11 @@
 
     brews = [ "docker" ];
 
-    casks = [ "bartender" "whatsapp" "macfuse" ];
+    casks = [ "bartender" "whatsapp" "macfuse" "discord" ];
 
-    masApps = { "Things" = 904280696; };
+    masApps = {
+      "Things" = 904280696;
+      "amphetamine" = 937984704;
+    };
   };
 }

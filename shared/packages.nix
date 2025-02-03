@@ -15,9 +15,9 @@
     cargo
     restic
     rclone
-    macfuse-stubs
-    fuse
-    jetbrains.goland
+    # macfuse-stubs
+    # fuse
+    # jetbrains.goland
     google-cloud-sdk
     lazygit
     gh
@@ -25,11 +25,12 @@
     telegram-desktop
     nix-search-cli
     azure-cli
-    prusa-slicer
+    # prusa-slicer
     go
     raycast
     act
     colima
+    obsidian
     vscode
   ];
 }
