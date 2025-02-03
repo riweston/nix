@@ -8,7 +8,6 @@
     nh_darwin.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
-  environment.shellAliases.nh = "nh_darwin";
 
   services.nix-daemon.enable = true;
   nixpkgs.config.allowUnfree = true;
