@@ -3,7 +3,6 @@
 {
   home.packages = with pkgs; [
     # Nix tooling
-    niv
     nixfmt
     nvd
     nix-output-monitor

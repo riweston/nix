@@ -31,7 +31,7 @@
 
   users = {
     knownUsers = [ userSettings.username ];
-    users.riweston = {
+    users.${userSettings.username} = {
       home = userSettings.homeDirectory;
       shell = userSettings.shell;
       uid = userSettings.uid;
