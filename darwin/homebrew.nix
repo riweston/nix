@@ -28,6 +28,7 @@
       "obsidian"
       "raycast"
       "scroll-reverser"
+      "smoothscroll"
       "telegram"
       "visual-studio-code"
       "whatsapp"
