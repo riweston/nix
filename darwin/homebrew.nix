@@ -7,15 +7,32 @@
       cleanup = "zap";
     };
 
+    taps = [
+      { name = "tangency-labs/tap"; trusted = true; }
+      { name = "riweston/aztx"; trusted = true; }
+    ];
+
     # mas >= 7 required for App Store installs on current macOS
     brews = [ "docker" "mas" ];
 
+    # Prefer brew casks for GUI apps — nix copyApps rewrites .app bundles on
+    # every switch and can reset app state (seen with Raycast).
     casks = [
-      "azure-cli" # moved from formula → cask
+      "1password"
+      "1password-cli"
+      "azure-cli"
       "bartender"
-      "whatsapp"
-      "macfuse"
+      "cursor"
       "discord"
+      "macfuse"
+      "obsidian"
+      "raycast"
+      "scroll-reverser"
+      "telegram"
+      "visual-studio-code"
+      "whatsapp"
+      "xbar"
+      "tangency-labs/tap/solidcraft"
     ];
 
     masApps = {

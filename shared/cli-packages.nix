@@ -19,6 +19,8 @@
     act
     restic
     rclone
+    colima
+    claude-code
 
     # Languages / runtimes
     rustc
@@ -30,7 +32,7 @@
 
     # Cloud CLIs
     google-cloud-sdk
-    # azure-cli: broken on nixpkgs-unstable (fabric/invoke); Homebrew cask in darwin/homebrew.nix
+    # azure-cli: broken on nixpkgs-unstable (fabric/invoke); Homebrew cask
 
     # Fonts used by terminal tooling
     fira-code

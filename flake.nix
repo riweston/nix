@@ -56,5 +56,9 @@
             }
           ];
         };
+
+      # `nix flake check` — catch eval/build breakages before switching
+      checks.${systemSettings.system}.darwin-config =
+        self.darwinConfigurations.${systemSettings.hostname}.config.system.build.toplevel;
     };
 }

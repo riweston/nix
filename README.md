@@ -40,8 +40,10 @@ nh darwin build           # build only
 
 ## Layout
 
-- `darwin/` — nix-darwin system config + Homebrew
+- `darwin/` — nix-darwin system config + Homebrew (GUI apps as casks)
 - `home/` — Home Manager user config
 - `shared/cli-packages.nix` — CLI / language tooling
-- `shared/gui-packages.nix` — GUI apps
 - `home/config/` — editable config files symlinked into `~/.config`
+
+GUI apps are Homebrew casks on purpose: nix `copyApps` rewrites `.app` bundles on
+every switch and can reset app state.
