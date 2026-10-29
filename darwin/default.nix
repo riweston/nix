@@ -3,9 +3,13 @@
 {
   imports = [ ./homebrew.nix ];
 
-  environment.systemPackages = [ pkgs.home-manager ];
+  environment.systemPackages = [
+    pkgs.home-manager
+    pkgs.nh
+    pkgs.terraform
+    pkgs.terraform-ls
+  ];
 
-  services.nix-daemon.enable = true;
   nixpkgs.config.allowUnfree = true;
 
   nix = {
@@ -38,7 +42,11 @@
     ${userSettings.username} ALL=(ALL) ALL
   '';
 
+  # Match the Determinate/new Nix installer default (was 30000 on older installs)
+  ids.gids.nixbld = 350;
+
   system.stateVersion = 4;
+  system.primaryUser = userSettings.username;
 
   fonts.packages = [ pkgs.atkinson-hyperlegible pkgs.jetbrains-mono ];
 }

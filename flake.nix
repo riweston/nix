@@ -11,11 +11,10 @@
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # Temp fix until https://github.com/nix-community/home-manager/issues/1341 is resolved
-    mac-app-util.url = "github:hraban/mac-app-util";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, darwin, mac-app-util, ... }:
+  outputs =
+    inputs@{ self, nixpkgs, home-manager, darwin, ... }:
     let
       systemSettings = rec {
         hostname = "MacBookPro";
@@ -50,11 +49,6 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.${userSettings.username} = import ./home;
-              home-manager.sharedModules = [
-                # This links up home-manager enabled programs with Mac Applications
-                # so that they can be opened from the Dock or Spotlight
-                mac-app-util.homeManagerModules.default
-              ];
               home-manager.extraSpecialArgs = {
                 system = systemSettings.system;
                 inherit userSettings;

@@ -1,24 +1,47 @@
 ## Description
 
-This repo contains my dotfiles and nix configuration files to setup my development environment.
+This repo contains my dotfiles and Nix configuration for a macOS development environment.
 
-I use the following tools:
+Tools:
 
 - [Nix](https://nixos.org/) for package management
-- [nix-darwin](https://github.com/LnL7/nix-darwin) for macOS configuration
+- [nix-darwin](https://github.com/nix-darwin/nix-darwin) for macOS configuration
 - [Home Manager](https://nix-community.github.io/home-manager/) for user configuration
-- [devenv](https://devenv.sh/) Setup project specific development environments a nix-like way
+- [nh](https://github.com/nix-community/nh) for build/switch ergonomics
+- [devenv](https://devenv.sh/) for project-specific environments
 
 ## Installation
 
-1. Install Nix by following the instructions at [nixos.org](https://nixos.org/download.html)
-2. Clone this repo to `~/nix` or wherever you want
-3. Update the following files with your information:
-    - `./flake.nix` (hostname)
-    - `./darwin/default.nix` (user{})
-    - `./home/programs/git.nix` (name, email)
-4. Run `nix run nix-darwin -- switch --flake ~/nix` to install the configuration
-5. Once the installation is complete you can run any of the following commands:
-    - `nh os switch` to build and switch to the latest configuration following any changes
-    - `nh os build` to build the configuration without switching
-    - Use the `--update` flag to update the configuration packages to the latest versions
+1. Install Nix ([nixos.org/download](https://nixos.org/download.html))
+2. Clone this repo to `~/.dotfiles`
+3. Update identity/settings as needed:
+   - `flake.nix` (hostname, system)
+   - `darwin/default.nix` (user / uid)
+   - `home/programs/git.nix` (name, email, signing key)
+4. Apply the configuration:
+   ```bash
+   nix run nix-darwin -- switch --flake ~/.dotfiles
+   ```
+
+## Day-to-day
+
+Fish helpers (after install):
+
+- `nos` — `nh darwin switch`
+- `nob` — `nh darwin build`
+
+Or run directly:
+
+```bash
+nh darwin switch          # build + activate
+nh darwin switch --update # update flake inputs, then switch
+nh darwin build           # build only
+```
+
+## Layout
+
+- `darwin/` — nix-darwin system config + Homebrew
+- `home/` — Home Manager user config
+- `shared/cli-packages.nix` — CLI / language tooling
+- `shared/gui-packages.nix` — GUI apps
+- `home/config/` — editable config files symlinked into `~/.config`

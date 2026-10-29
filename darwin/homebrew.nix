@@ -2,7 +2,7 @@
   homebrew = {
     enable = true;
 
-    brews = [ "docker" ];
+    brews = [ "docker" "azure-cli" ];
 
     casks = [ "bartender" "whatsapp" "macfuse" "discord" ];
 

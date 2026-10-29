@@ -6,6 +6,7 @@
       set fish_greeting # N/A
       # Setup brew in fish
       /opt/homebrew/bin/brew shellenv | source
+      atuin-setup
     '';
 
     plugins = [

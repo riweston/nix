@@ -10,24 +10,23 @@
     ./programs/starship.nix
   ];
 
-  home.stateVersion = "24.05";
+  home.stateVersion = "25.11";
 
-  # TODO: Don't think this is necessary
-  nixpkgs.config.allowUnfree = true;
   fonts.fontconfig.enable = true;
 
   home.sessionVariables = {
-    FLAKE = "${userSettings.homeDirectory}/.dotfiles";
-    NH_FLAKE = "${userSettings.homeDirectory}/.dotfiles";
     LG_CONFIG_FILE = "${userSettings.homeDirectory}/.config/lazygit/config.yml";
   };
+
+  services.ollama.enable = true;
 
   programs = {
     direnv.enable = true;
     direnv.nix-direnv.enable = true;
     # TODO: See if we can use SOPS to capture the encryption key to improve bootstrap QoL
     atuin.enable = true;
-    atuin.flags = [ "--disable-up-arrow" ];
+    # Custom Ctrl-R is handled by atuin-setup (fzf + atuin); keep up-arrow free too
+    atuin.flags = [ "--disable-up-arrow" "--disable-ctrl-r" ];
     bat.enable = true;
     bat.extraPackages = with pkgs.bat-extras; [
       batgrep
@@ -40,6 +39,10 @@
     fish.enable = true;
     fzf.enable = true;
     jq.enable = true;
+    nh = {
+      enable = true;
+      flake = "${userSettings.homeDirectory}/.dotfiles";
+    };
     wezterm.enable = true;
     zoxide.enable = true;
   };
