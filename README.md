@@ -38,6 +38,10 @@ nh darwin switch --update # update flake inputs, then switch
 nh darwin build           # build only
 ```
 
+Homebrew packages upgrade on every switch. Nix flake inputs also update weekly
+via a launchd agent (Monday 09:00) — see `darwin/auto-upgrade.nix`. Logs go to
+`~/Library/Logs/nix-darwin-auto-upgrade.log`.
+
 ## Layout
 
 - `darwin/` — nix-darwin system config + Homebrew (GUI apps as casks)

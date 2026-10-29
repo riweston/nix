@@ -1,7 +1,7 @@
 { config, pkgs, userSettings, ... }:
 
 {
-  imports = [ ./homebrew.nix ];
+  imports = [ ./homebrew.nix ./auto-upgrade.nix ];
 
   environment.systemPackages = [
     pkgs.home-manager
@@ -40,8 +40,14 @@
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
+  # General sudo still asks for auth; NOPASSWD rules below win for nh/activation
+  # so the weekly auto-upgrade agent can run unattended.
   security.sudo.extraConfig = ''
     ${userSettings.username} ALL=(ALL) ALL
+    ${userSettings.username} ALL=(ALL) NOPASSWD: /run/current-system/sw/bin/nh
+    ${userSettings.username} ALL=(ALL) NOPASSWD: /run/current-system/sw/bin/darwin-rebuild
+    ${userSettings.username} ALL=(ALL) NOPASSWD: /nix/store/*/activate
+    ${userSettings.username} ALL=(ALL) NOPASSWD: /nix/store/*/activate-user
   '';
 
   # Match the Determinate/new Nix installer default (was 30000 on older installs)
