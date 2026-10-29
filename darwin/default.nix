@@ -38,6 +38,8 @@
     };
   };
 
+  security.pam.services.sudo_local.touchIdAuth = true;
+
   security.sudo.extraConfig = ''
     ${userSettings.username} ALL=(ALL) ALL
   '';
