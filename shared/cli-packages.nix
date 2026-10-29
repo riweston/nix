@@ -31,8 +31,7 @@
 
     # Cloud CLIs
     google-cloud-sdk
-    # azure-cli is broken on nixpkgs-unstable (fabric requires invoke<3, got 3.0.3)
-    # Installed via Homebrew instead — see darwin/homebrew.nix
+    # azure-cli: broken on nixpkgs-unstable (fabric/invoke); Homebrew cask in darwin/homebrew.nix
 
     # Fonts used by terminal tooling
     fira-code

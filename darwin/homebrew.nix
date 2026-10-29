@@ -2,13 +2,21 @@
   homebrew = {
     enable = true;
 
-    brews = [ "docker" "azure-cli" ];
+    brews = [ "docker" ];
 
-    casks = [ "bartender" "whatsapp" "macfuse" "discord" ];
+    casks = [
+      "azure-cli" # moved from formula → cask
+      "bartender"
+      "whatsapp"
+      "macfuse"
+      "discord"
+    ];
 
-    masApps = {
-      "Things" = 904280696;
-      "amphetamine" = 937984704;
-    };
+    # mas-cli currently fails on this macOS ("not supported... changes in macOS").
+    # Install Things / Amphetamine from the App Store manually until mas works again.
+    # masApps = {
+    #   "Things" = 904280696;
+    #   "amphetamine" = 937984704;
+    # };
   };
 }
