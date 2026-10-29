@@ -3,6 +3,8 @@
     enable = true;
 
     onActivation = {
+      autoUpdate = true; # brew update before bundle
+      upgrade = true; # upgrade outdated formulae, casks, and mas apps
       # Remove formulae/casks no longer in the Brewfile (including cask leftovers)
       cleanup = "zap";
     };
