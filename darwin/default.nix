@@ -18,6 +18,26 @@
       "extra-experimental-features" = [ "nix-command" "flakes" ];
       trusted-users = [ "root" userSettings.username ];
     };
+
+    # Keep ~a month of generations; GC older ones weekly (Monday 10:00, after auto-upgrade)
+    gc = {
+      automatic = true;
+      interval = [{
+        Weekday = 1;
+        Hour = 10;
+        Minute = 0;
+      }];
+      options = "--delete-older-than 30d";
+    };
+
+    optimise = {
+      automatic = true;
+      interval = [{
+        Weekday = 1;
+        Hour = 10;
+        Minute = 30;
+      }];
+    };
   };
 
   programs = {

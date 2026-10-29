@@ -42,6 +42,9 @@ Homebrew packages upgrade on every switch. Nix flake inputs also update weekly
 via a launchd agent (Monday 09:00) — see `darwin/auto-upgrade.nix`. Logs go to
 `~/Library/Logs/nix-darwin-auto-upgrade.log`.
 
+Store GC runs Monday 10:00 with `--delete-older-than 30d` (keeps a month of
+generations), then store optimise at 10:30.
+
 ## Layout
 
 - `darwin/` — nix-darwin system config + Homebrew (GUI apps as casks)
